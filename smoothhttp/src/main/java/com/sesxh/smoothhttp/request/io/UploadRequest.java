@@ -66,7 +66,7 @@ public class UploadRequest extends IORequest<UploadRequest> {
                 }
             }
         }
-        mApi.uploadFiles(url, multipartBodyParts)
+        mApi.uploadFiles(url, headers, multipartBodyParts)
                 .compose(LifeCycle.create().initSubject(mSubject).bindLife())
                 .compose(RxScheduler.io())
                 .subscribe(callback);
