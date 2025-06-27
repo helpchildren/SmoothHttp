@@ -56,5 +56,9 @@ public interface Api {
     @POST()
     Observable<ResponseBody> uploadFiles(@Url() String url, @Part() List<MultipartBody.Part> parts);
 
+    @Multipart
+    @POST()
+    Observable<ResponseBody> uploadFiles(@Url() String url, @HeaderMap Map<String, String> headers, @Part() List<MultipartBody.Part> parts);
+
 
 }
